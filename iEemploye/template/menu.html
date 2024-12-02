@@ -1,0 +1,38 @@
+{% load static %}
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body{
+        color: white;
+        background-image: url("{% static 'image/back.png' %}");
+        background-attachment: fixed;
+        background-size: 100%;
+    }
+    form{
+        text-align: center;
+        margin-top: 10%;
+        font-size: 30px;
+    }
+    input{
+        font-size: 20px;
+    }
+    #home{
+        text-align: left;
+        margin-top: 10px;
+    }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class= "container" >
+    <div class="jumbotron">
+
+        <h1>Menu</h1>
+        <ul>
+            <li><a href="{% url 'create' %}">Create</a></li>
+            <li><a href="{% url 'edit' %}">Edit</a></li>    
+            <li><a href="{% url 'list' %}">List</a></li>
+        </ul>
+        <form action="{% url 'welcome' %}" id="home">
+            <input type="submit" class="btn btn-primary" value="Home">
+        </form>
+    </div>
+</div>

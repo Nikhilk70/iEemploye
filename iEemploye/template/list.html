@@ -1,0 +1,17 @@
+{% include 'menu.html'%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class= "container" >
+    <div class="jumbotron">
+
+        <h1>List</h1>
+
+        {% for obj in details %}
+        <h2>Name : {{ obj.name }}</h2>
+        <p>Employee ID : {{ obj.emid }}</p>
+        <p>Desiganation : {{ obj.role }}</p>
+        <p>Date of joing : {{ obj.join }}</p>
+        <p><a href="{% url 'edit' obj.id %}">Edit</a> | <a href="{% url 'delete' obj.id %}">Delete</a></p>
+        {% endfor%}
+    </div>
+</div>
